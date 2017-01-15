@@ -47,7 +47,9 @@ COPY default.conf /etc/nginx/conf.d/default.conf
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 RUN rm -rf /var/www/html \
-    && ln -s /home /var/www/html
+    && rm -rf /var/log/nginx \
+    && ln -s /home/site/wwwroot /var/www/html \
+    && ln -s /home/LogFiles /var/log/nginx
 
 EXPOSE 80
 
