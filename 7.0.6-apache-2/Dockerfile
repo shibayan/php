@@ -43,6 +43,8 @@ RUN apt-get update \
          bcmath \
          mbstring \
          pcntl \
+         sqlsrv \
+         pdo_sqlsrv \
     && docker-php-ext-enable imagick
 
 RUN   \
